@@ -41,8 +41,6 @@ spec:
   post {
     success {
       script {
-        echo ${env.JOB_NAME}
-        echo ${env.BUILD_NUMBER}
         if (params.FLOW_CONTEXT == 'deploy') {
           step([$class: 'ElectricFlowPipelinePublisher',
             configuration: 'flow-sko-jenkins-config',
